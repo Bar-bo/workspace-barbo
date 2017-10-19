@@ -87,7 +87,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadXyzWidget();
             
-            this.loadWcsWidget();
+            //this.loadWcsWidget();
             
             this.loadProgrammerWidget();
             

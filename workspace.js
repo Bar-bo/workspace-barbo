@@ -272,7 +272,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
          * Load the touchplate List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
-        loadATouchplateWidget: function(callback) {
+        loadTouchplateWidget: function(callback) {
 
             chilipeppr.load(
               "#com-chilipeppr-widget-touchplate",

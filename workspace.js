@@ -166,7 +166,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
          * Load the svg2gcode List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
-        loadsvg2gcodeWidget: function(callback) {
+        loadSvg2gcodeWidget: function(callback) {
 
             chilipeppr.load(
                 "#com-zipwhip-widget-svg2gcode",

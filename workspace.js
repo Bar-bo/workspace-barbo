@@ -71,9 +71,17 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadCayennWidget();
             
-            this.loadSvg2gcodeWidget();            
+            this.loadSvg2gcodeWidget();
+            
+            this.loadFont2gcodeWidget();
            
             this.loadEagleWidget();
+            
+            this.loadMacroWidget();
+            
+            this.loadTouchPlateWidget();
+            
+            this.loadAutolevelWidget();
             
             this.loadTemplateWidget();
             
@@ -169,10 +177,56 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             );
         },
         /**
+         * Load the svg2code List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadSvg2gcodeWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-zipwhip-widget-svg2gcode",
+              "http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivComZipwhipWidgetSvg2gcode
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
+                  function(myObjComZipwhipWidgetSvg2gcode) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / svg2gcode just got loaded.", myObjComZipwhipWidgetSvg2gcode);
+                    myObjComZipwhipWidgetSvg2gcode.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the font2gcode List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadFont2gcodeWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-zipwhip-widget-font2gcode",
+              "http://raw.githubusercontent.com/chilipeppr/widget-font2gcode/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivComZipwhipWidgetFont2gcode
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-zipwhip-widget-font2gcode"], // the id you gave your widget
+                  function(myObjComZipwhipWidgetFont2gcode) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Font2Gcode just got loaded.", myObjComZipwhipWidgetFont2gcode);
+                    myObjComZipwhipWidgetFont2gcode.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
          * Load the eagle List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
-        loadEagleWidget: function(callback) {com-chilipeppr-widget-eagle
+        loadEagleWidget: function(callback) {
 
             chilipeppr.load(
               "#com-chilipeppr-widget-eagle",
@@ -186,6 +240,75 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Eagle BRD v5.4 just got loaded.", myObjWidgetEagle);
                     myObjWidgetEagle.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the macro List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadAutolevelWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-macro",
+              "http://raw.githubusercontent.com/chilipeppr/widget-macro/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetMacro
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-macro"], // the id you gave your widget
+                  function(myObjWidgetMacro) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Macro just got loaded.", myObjWidgetMacro);
+                    myObjWidgetMacro.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the touchplate List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadATouchplateWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-touchplate",
+              "http://raw.githubusercontent.com/chilipeppr/widget-touchplate/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetTouchplate
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-touchplate"], // the id you gave your widget
+                  function(myObjWidgetTouchplate) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Touch Plate just got loaded.", myObjWidgetTouchplate);
+                    myObjWidgetTouchplate.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the autolevel List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadAutolevelWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-autolevel",
+              "http://raw.githubusercontent.com/chilipeppr/widget-autolevel/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetAutolevel
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-autolevel"], // the id you gave your widget
+                  function(myObjWidgetAutolevel) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Auto-Level just got loaded.", myObjWidgetAutolevel);
+                    myObjWidgetAutolevel.init();
                   }
                 );
               }

@@ -79,7 +79,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadMacroWidget();
             
-            this.loadTouchPlateWidget();
+            this.loadTouchplateWidget();
             
             this.loadAutolevelWidget();
             
@@ -249,7 +249,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
          * Load the macro List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
-        loadAutolevelWidget: function(callback) {
+        loadMacroWidget: function(callback) {
 
             chilipeppr.load(
               "#com-chilipeppr-widget-macro",

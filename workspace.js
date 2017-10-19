@@ -83,6 +83,8 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadAutolevelWidget();
             
+            this.loadWcsWidget();
+            
             this.loadTemplateWidget();
             
             // Create our workspace upper right corner triangle menu
@@ -309,6 +311,29 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Auto-Level just got loaded.", myObjWidgetAutolevel);
                     myObjWidgetAutolevel.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the autolevel List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadWcsWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-wcs",
+              "http://raw.githubusercontent.com/chilipeppr/widget-wcs/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetWcs
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-wcs"], // the id you gave your widget
+                  function(myObjWidgetWcs) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Work Coordinate System just got loaded.", myObjWidgetWcs);
+                    myObjWidgetWcs.init();
                   }
                 );
               }

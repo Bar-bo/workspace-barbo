@@ -77,6 +77,8 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
            
             this.loadEagleWidget();
             
+            this.loadSoldermaskWidget();
+            
             this.loadMacroWidget();
             
             this.loadTouchplateWidget();
@@ -242,6 +244,28 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / Eagle BRD v5.4 just got loaded.", myObjWidgetEagle);
                     myObjWidgetEagle.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the soldermask List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadSoldermaskWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-eagle-soldermask",
+              "http://raw.githubusercontent.com/chilipeppr/widget-eagle-soldermask/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetInsertedInto
+                cprequire(
+                  ["inline:com-chilipeppr-widget-eagle-soldermask"], // the id you gave your widget
+                  function(mywidget) {
+                    // Callback that is passed reference to your newly loaded widget
+                    console.log("My widget just got loaded.", myObjWidgetSoldermask);
+                    mywidget.init();
                   }
                 );
               }

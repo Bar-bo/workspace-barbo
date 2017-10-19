@@ -1,9 +1,9 @@
-# com-chilipeppr-workspace-sample
-A ChiliPeppr Workspace sample.
+# com-chilipeppr-workspace-barbo
+A ChiliPeppr Workspace barbo.
 
 ![alt text](screenshot.png "Screenshot")
 
-## ChiliPeppr Workspace / Sample
+## ChiliPeppr Workspace / barbo
 
 All ChiliPeppr workspaces/widgets/elements are defined using cpdefine() which is a method
 that mimics require.js. Each defined object must have a unique ID so it does
@@ -11,9 +11,9 @@ not conflict with other ChiliPeppr objects.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-chilipeppr-workspace-sample |
-| Name                  | Workspace / Sample |
-| Description           | A ChiliPeppr Workspace sample. |
+| ID                    | com-chilipeppr-workspace-barbo |
+| Name                  | Workspace / barbo |
+| Description           | A ChiliPeppr Workspace barbo. |
 | chilipeppr.load() URL | http://raw.githubusercontent.com/Bar-bo/workspace-barbo/master/auto-generated-workspace.html |
 | Edit URL              | http://ide.c9.io/barbo/workspace-barbo |
 | Github URL            | http://github.com/Bar-bo/workspace-barbo |
@@ -39,11 +39,11 @@ chilipeppr.load(
     // Callback after workspace loaded into #pnlWorkspace
     // Now use require.js to get reference to instantiated workspace
     cprequire(
-      ["inline:com-chilipeppr-workspace-sample"], // the id you gave your workspace
-      function(myWorkspaceSample) {
+      ["inline:com-chilipeppr-workspace-barbo"], // the id you gave your workspace
+      function(myWorkspaceBarbo) {
         // Callback that is passed reference to the newly loaded workspace
-        console.log("Workspace / Sample just got loaded.", myWorkspaceSample);
-        myWorkspaceSample.init();
+        console.log("Workspace / barbo just got loaded.", myWorkspaceBarbo);
+        myWorkspaceBarbo.init();
       }
     );
   }
@@ -135,7 +135,7 @@ The table below shows, in order, the methods and properties inside the workspace
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-workspace-sample"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / Sample"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"A ChiliPeppr Workspace sample."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/Bar-bo/workspace-barbo/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/barbo/workspace-barbo"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/Bar-bo/workspace-barbo"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://workspace-barbo-barbo.c9users.io/workspace.html"</td></tr><tr valign="top"><td>widgetConsole</td><td>object</td><td>Contains reference to the Console widget object. Hang onto the reference
+      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-workspace-barbo"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / barbo"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"A ChiliPeppr Workspace barbo."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/Bar-bo/workspace-barbo/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/barbo/workspace-barbo"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/Bar-bo/workspace-barbo"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://workspace-barbo-barbo.c9users.io/workspace.html"</td></tr><tr valign="top"><td>widgetConsole</td><td>object</td><td>Contains reference to the Console widget object. Hang onto the reference
 so we can resize it when the window resizes because we want it to manually
 resize to fill the height of the browser so it looks clean.</td></tr><tr valign="top"><td>widgetSpjs</td><td>object</td><td>Contains reference to the Serial Port JSON Server object.</td></tr><tr valign="top"><td>init</td><td>function</td><td>function () <br><br>The workspace's init method. It loads the all the widgets contained in the workspace
 and inits them.</td></tr><tr valign="top"><td>getBillboard</td><td>function</td><td>function () <br><br>Returns the billboard HTML, CSS, and Javascript for this Workspace. The billboard

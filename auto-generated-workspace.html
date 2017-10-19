@@ -435,7 +435,30 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             );
         },
         /**
-         * Load thewcs List via chilipeppr.load() so folks have a sample
+         * Load the xyz List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadXyzidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-xyz",
+              "http://raw.githubusercontent.com/chilipeppr/widget-axes/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetXyz
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-xyz"], // the id you gave your widget
+                  function(myObjWidgetXyz) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / XYZ Axes v2 just got loaded.", myObjWidgetXyz);
+                    myObjWidgetXyz.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
+         * Load the wcs List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
         loadWcsWidget: function(callback) {
@@ -690,6 +713,9 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                 <!-- Right Column -->
                 <div class="col-md-3 col-pad10">
                     
+                    <div id="com-chilipeppr-widget-xyz">
+                        <p class="sample">xyz goes here</p>
+                    </div>                    
                     <div id="com-chilipeppr-widget-wcs">
                         <p class="sample">wcs goes here</p>
                     </div>

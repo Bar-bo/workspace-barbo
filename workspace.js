@@ -71,7 +71,9 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadCayennWidget();
             
-            this.loadSvg2gcodeWidget();
+            this.loadSvg2gcodeWidget();            
+           
+            this.loadEagleWidget();
             
             this.loadTemplateWidget();
             
@@ -167,6 +169,29 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             );
         },
         /**
+         * Load the eagle List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadEagleWidget: function(callback) {com-chilipeppr-widget-eagle
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-eagle",
+              "http://raw.githubusercontent.com/chilipeppr/widget-eagle/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetEagle
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-eagle"], // the id you gave your widget
+                  function(myObjWidgetEagle) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Eagle BRD v5.4 just got loaded.", myObjWidgetEagle);
+                    myObjWidgetEagle.init();
+                  }
+                );
+              }
+            );
+        },
+        /**
          * Load the Serial Port JSON Server widget via chilipeppr.load()
          */
         loadSpjsWidget: function(callback) {
@@ -218,29 +243,6 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                         console.log("Widget / Cayenn just got loaded.", myObjWidgetCayenn);
                         myObjWidgetCayenn.init();
                       }
-                    );
-                }
-            );
-        },
-        /**
-         * Load the svg2gcode List via chilipeppr.load() so folks have a sample
-         * widget they can fork as a starting point for their own.
-         */
-        loadSvg2gcodeWidget: function(callback) {
-
-            chilipeppr.load(
-                "#com-zipwhip-widget-svg2gcode",
-                "http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
-                function() {
-                    // Callback after widget loaded into #myDivComZipwhipWidgetSvg2gcode
-                    // Now use require.js to get reference to instantiated widget
-                    cprequire(
-                        ["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
-                        function(myObjComZipwhipWidgetSvg2gcode) {
-                            // Callback that is passed reference to the newly loaded widget
-                            console.log("Widget / svg2gcode just got loaded.", myObjComZipwhipWidgetSvg2gcode);
-                            myObjComZipwhipWidgetSvg2gcode.init();
-                        }
                     );
                 }
             );

@@ -87,8 +87,6 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadXyzWidget();
             
-            //this.loadWcsWidget();
-            
             this.loadProgrammerWidget();
             
             this.loadTemplateWidget();
@@ -362,29 +360,6 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / XYZ Axes v2 just got loaded.", myObjWidgetXyz);
                     myObjWidgetXyz.init();
-                  }
-                );
-              }
-            );
-        },
-        /**
-         * Load the wcs List via chilipeppr.load() so folks have a sample
-         * widget they can fork as a starting point for their own.
-         */
-        loadWcsWidget: function(callback) {
-
-            chilipeppr.load(
-              "#com-chilipeppr-widget-wcs",
-              "http://raw.githubusercontent.com/chilipeppr/widget-wcs/master/auto-generated-widget.html",
-              function() {
-                // Callback after widget loaded into #myDivWidgetWcs
-                // Now use require.js to get reference to instantiated widget
-                cprequire(
-                  ["inline:com-chilipeppr-widget-wcs"], // the id you gave your widget
-                  function(myObjWidgetWcs) {
-                    // Callback that is passed reference to the newly loaded widget
-                    console.log("Widget / Work Coordinate System just got loaded.", myObjWidgetWcs);
-                    myObjWidgetWcs.init();
                   }
                 );
               }

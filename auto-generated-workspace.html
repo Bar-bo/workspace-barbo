@@ -160,6 +160,8 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
             
+            this.loadCayennWidget();
+            
             this.loadTemplateWidget();
             
             // Create our workspace upper right corner triangle menu
@@ -259,6 +261,30 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                         if (callback) callback(spjs);
 
                     });
+                }
+            );
+        },
+        /**
+         * Load the Cayenn widget via chilipeppr.load()
+         */
+        loadCayennWidget: function(callback) {
+
+            var that = this;
+
+            chilipeppr.load(
+                "#com-chilipeppr-widget-cayenn",
+                "http://raw.githubusercontent.com/chilipeppr/widget-cayenn/master/auto-generated-widget.html",
+                function() {
+                    // Callback after widget loaded into #myDivWidgetCayenn
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                      ["inline:com-chilipeppr-widget-cayenn"], // the id you gave your widget
+                      function(myObjWidgetCayenn) {
+                        // Callback that is passed reference to the newly loaded widget
+                        console.log("Widget / Cayenn just got loaded.", myObjWidgetCayenn);
+                        myObjWidgetCayenn.init();
+                      }
+                    );
                 }
             );
         },
@@ -392,8 +418,8 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                         Widget 3 goes here
                     </div>
                     
-                    <div id="mywidget3-instance">
-                        <p class="sample">Widget 3 goes here</p>
+                    <div id="com-chilipeppr-widget-cayenn">
+                        <p class="sample">Cayenn goes here</p>
                     </div>
 
                 </div>

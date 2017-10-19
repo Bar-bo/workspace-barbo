@@ -346,7 +346,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
          * Load the xyz List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
-        loadXyzidget: function(callback) {
+        loadXyzWidget: function(callback) {
 
             chilipeppr.load(
               "#com-chilipeppr-widget-xyz",

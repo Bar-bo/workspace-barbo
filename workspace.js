@@ -62,6 +62,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
         init: function() {
 
             // Most workspaces will instantiate the Serial Port JSON Server widget
+            this.load3dviewerWidget();
             this.loadSpjsWidget();
             this.loadGcodeWidget();
             // Most workspaces will instantiate the Serial Port Console widget
@@ -84,8 +85,6 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             this.loadTouchplateWidget();
             
             this.loadAutolevelWidget();
-            
-            this.load3dviewerWidget();
              
             this.loadXyzWidget();
             

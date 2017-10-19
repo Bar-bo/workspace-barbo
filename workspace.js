@@ -87,6 +87,8 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             
             this.loadWcsWidget();
             
+            this.loadProgrammerWidget();
+            
             this.loadTemplateWidget();
             
             // Create our workspace upper right corner triangle menu
@@ -341,7 +343,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             );
         },
         /**
-         * Load the autolevel List via chilipeppr.load() so folks have a sample
+         * Load thewcs List via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
         loadWcsWidget: function(callback) {
@@ -393,6 +395,29 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
 
                     });
                 }
+            );
+        },
+        /**
+         * Load the programmer List via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        loadProgrammerWidget: function(callback) {
+
+            chilipeppr.load(
+              "#com-chilipeppr-widget-programmer",
+              "http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetProgrammer
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-programmer"], // the id you gave your widget
+                  function(myObjWidgetProgrammer) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Programmer just got loaded.", myObjWidgetProgrammer);
+                    myObjWidgetProgrammer.init();
+                  }
+                );
+              }
             );
         },
         /**

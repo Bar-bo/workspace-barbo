@@ -64,7 +64,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             // Most workspaces will instantiate the Serial Port JSON Server widget
             this.loadSpjsWidget();
             this.loadGcodeWidget();
-            this.load3dviewer();
+            this.load3dviewerWidget();
             // Most workspaces will instantiate the Serial Port Console widget
             this.loadConsoleWidget(function() {
                 setTimeout(function() { $(window).trigger('resize'); }, 100);

@@ -156,7 +156,7 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
             // Most workspaces will instantiate the Serial Port JSON Server widget
             this.loadSpjsWidget();
             this.loadGcodeWidget();
-            this.load3dviewer();
+            this.load3dviewerWidget();
             // Most workspaces will instantiate the Serial Port Console widget
             this.loadConsoleWidget(function() {
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
@@ -724,7 +724,6 @@ cpdefine("inline:com-chilipeppr-workspace-barbo", ["chilipeppr_ready"], function
                <!-- <div id="com-chilipeppr-widget-3dviewer">
                 <p class="sample">3dviewer goes here</p>
                 </div>-->
-                <div id="com-chilipeppr-3dviewer-controlpanel" style=""></div>
                     <div id="mywidget2-instance">
                         <p class="sample" style="min-height:200px;">Widget 2 goes here</p>
                     </div>
